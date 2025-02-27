@@ -1,8 +1,35 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import {Link} from 'react-router-dom';
+import {FaTrash} from 'react-icons/fa'
+
 
 const Home = () => {
     const [show, setShow] = useState(false)
+    const responsive = {
+        superLargeDesktop: {
+          breakpoint: { max: 4000, min: 3000 },
+          items: 5
+        },
+        desktop: {
+          breakpoint: { max: 3000, min: 1024 },
+          items: 4
+        },
+        tablet: {
+          breakpoint: { max: 1024, min: 464 },
+          items: 3
+        },
+        mdtablet: {
+          breakpoint: { max: 992, min: 464 },
+          items: 3
+        },
+        mobile: {
+          breakpoint: { max: 464, min: 0 },
+          items: 4
+        }
+      };
   return (
 
         <div className="pt-5">
@@ -28,6 +55,27 @@ const Home = () => {
             </div>
             <div>
                 <h2 className='text-xl py-6 font-semibold text-white'>Your recent designs</h2>
+                <div>
+                    <Carousel
+                    autoPlay={true}
+                    infinite={true}
+                    responsive={responsive}
+                    transitionDuration={500}                    
+                    >
+                        {
+                            [1,2,3,4,5,6,7,8].map((d,i) => <div className='relative group w-full h-[150px px-2' key={i}>
+                                <Link className='w-full h-full block bg-[#ffffff12] p-4 rounded-md' >
+                                    <img className='w-full h-full rounded-md overflow-hidden' src="http://localhost:5173/project.jpeg" alt="" />
+                                </Link>
+                                <div className='absolute hidden cursor-pointer top-1 right-2 text-red-500 p-2 transition-all duration-500 
+                                group-hover:block'><FaTrash /></div>
+
+                            </div>)
+                        }
+
+                    </Carousel>
+
+                </div>
             </div>
 
 
