@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Index from './pages/Index.jsx'
 import Layout from "./pages/Layout.jsx";
@@ -6,6 +5,7 @@ import Home from "./components/Home.jsx"
 import Projects from "./components/Projects.jsx"
 import Templates from "./components/Templates.jsx";
 import CreateDesign from "./components/CreateDesign.jsx";
+import Main from "./pages/Main.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,11 @@ const router = createBrowserRouter([
   {
     path : '/design/create',
     element : <CreateDesign/>
-  }
+  },
+  {
+    path : '/design/:id/edit',
+    element : <Main/>
+  },
 ])
 
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { Link,Outlet,useLocation } from 'react-router-dom'
 import {FaHome} from  'react-icons/fa'
@@ -20,11 +19,11 @@ const Layout = () => {
                     <div className="flex gap-4 justify-center items-center relative">
                         <button className='p-2 px-6 overflow-hidden text-center bg-[#8b3dff] text-white rounded-[3px] font-medium hover:bg-[#9553f8]'>Create a Design</button>
                         <div onClick={()=>setShow(!show)} className='cursor-pointer'>
-                            <img src="https://lh3.googleusercontent.com/ogw/AF2bZyiYlYXyp94WY4-Cd0jB-6CIemZUrbuqYWgBWDp02KxfTDg=s32-c-mo" alt="profile" className='w-[45px] h-[45px] rounded-full' />
+                            <img src="https://blogpfthumb-phinf.pstatic.net/20180428_117/ilinkyou_1524921283734d4oF8_PNG/avatar_profile.png?type=w161" alt="profile" className='w-[45px] h-[45px] rounded-full' />
                         </div>
                         <div className={`absolute top-[60px] right-0 w-[250px] bg-[#313030] p-3 border border-gray-700 transition duration-500 ${show?'visible opacity-100':'invisible opacity-30'}`}>
                             <div className='px-2 py-2 flex justify-start gap-2 items-center'>
-                                <img src="https://lh3.googleusercontent.com/ogw/AF2bZyiYlYXyp94WY4-Cd0jB-6CIemZUrbuqYWgBWDp02KxfTDg=s32-c-mo" alt="profile" className='w-[40px] h-[40px] rounded-full' />
+                                <img src="https://blogpfthumb-phinf.pstatic.net/20180428_117/ilinkyou_1524921283734d4oF8_PNG/avatar_profile.png?type=w161" alt="profile" className='w-[40px] h-[40px] rounded-full' />
                                 <div className='flext justify-center flex-col items-start'>
                                     <span className='text-[#e0dddd] font-bold text-md'>hynsang cho </span>
                                     <span className='text-[#c4c0c0] font-bold text-md'>hscho4sky@gmail.com</span>
@@ -54,7 +53,7 @@ const Layout = () => {
         <div className='w-full flex mt-16'>
             <div className='sidebar w-[300px] p-5 h-[calc(100vh-70px)] fixed'>
                 <div className="px-2 py-2 flex justify-start ga-5 items-center mb-3">
-                    <img className='w-[40px] h-[40px] rounded-full' src="https://lh3.googleusercontent.com/ogw/AF2bZyiYlYXyp94WY4-Cd0jB-6CIemZUrbuqYWgBWDp02KxfTDg=s32-c-mo" alt="image" />
+                    <img className='w-[40px] h-[40px] rounded-full' src="https://blogpfthumb-phinf.pstatic.net/20180428_117/ilinkyou_1524921283734d4oF8_PNG/avatar_profile.png?type=w161" alt="image" />
                     <div className="flex justify-center flex-col items-start">
                         <span className='text-[#e0dddd] font-bold text-md'>hynsang cho</span>
                         <span className='text-[#c4c0c0] text-sm'>Free</span>
