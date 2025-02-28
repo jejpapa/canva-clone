@@ -92,7 +92,7 @@ const Layout = () => {
 
             <div className="ml-[300px] w-[calc(100%-300px)]">
                 <div className='py-4 pr-4'>
-                    <Outlet></Outlet>
+                <Outlet></Outlet>
 
                 </div>
 

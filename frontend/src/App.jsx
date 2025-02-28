@@ -5,6 +5,7 @@ import Layout from "./pages/Layout.jsx";
 import Home from "./components/Home.jsx"
 import Projects from "./components/Projects.jsx"
 import Templates from "./components/Templates.jsx";
+import CreateDesign from "./components/CreateDesign.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
         element: <Templates/>
       },
     ]
+  },
+  {
+    path : '/design/create',
+    element : <CreateDesign/>
   }
 ])
 
