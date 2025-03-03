@@ -429,12 +429,12 @@ const Main = () => {
                             state === 'project' && <Projects type='main' design_id={design_id} />
                         }
                         {
-                            state === 'initImage' && <div className='h-[88vh] overflow-x-auto flex justify-start items-start scrollbar-hide no-scrollbar'>
+                            state === 'initImage' && <div className='h-[88vh] overflow-x-auto flex justify-start items-start scrollbar-hide'>
                                 <InitialImage add_image={add_image} />
                             </div>
                         }
                         {
-                            state === 'background' && <div className='h-[88vh] overflow-x-auto flex justify-start items-start scrollbar-hide no-scrollbar'>
+                            state === 'background' && <div className='h-[88vh] overflow-x-auto flex justify-start items-start scrollbar-hide'>
                                 <BackgroundImages type='background' setImage={setImage} />
                             </div>
                         }

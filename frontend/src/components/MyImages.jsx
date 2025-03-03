@@ -16,6 +16,7 @@ const MyImages = ({add_image}) => {
       try {
         setLoader(true)
         const { data } = await api.post('/api/add-user-image', formData)
+        //console.log(data);
         setImages([...images, data.userImage])
         setLoader(false)
       } catch (error) {

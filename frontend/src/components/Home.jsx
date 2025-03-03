@@ -16,11 +16,13 @@ const Home = () => {
         height: 0
     })
 
+    // inputHandle은 단순히 state만 업데이트
     const inputHandle = (e) => {
-        setState({
-            ...state,
-            [e.target.name]: e.target.value
-        })
+        const { name, value } = e.target;
+        setState(prevState => ({
+            ...prevState,
+            [name]: value
+        }));
     }
 
     const [show, setShow] = useState(false)
@@ -47,14 +49,30 @@ const Home = () => {
         }
     };
 
-    const create = () => {
+    // create 함수에서 최신 state 값을 사용
+    const create = (e) => {
+        e.preventDefault(); // form 제출 기본 동작 방지
+        
+        // state 값이 제대로 업데이트되었는지 확인 후 navigate
+        const { width, height } = state;
+        
+        if (!width || !height) {
+            toast.error('Please enter both width and height');
+            return;
+        }
+
+        if (parseInt(width) <= 0 || parseInt(height) <= 0) {
+            toast.error('Dimensions must be positive numbers');
+            return;
+        }
+
         navigate('/design/create', {
             state: {
                 type: 'create',
-                width: state.width,
-                height: state.height
+                width: parseInt(width), // 문자열을 숫자로 변환
+                height: parseInt(height)
             }
-        })
+        });
     }
 
     const get_user_design = async () => {
@@ -67,7 +85,6 @@ const Home = () => {
     }
 
     useEffect(() => {
-
         get_user_design()
     }, [])
 
@@ -105,11 +122,27 @@ const Home = () => {
                             <div className='grid grid-cols-2 pb-4 gap-3'>
                                 <div className='flex gap-2 justify-center items-start flex-col'>
                                     <label htmlFor="width">Width</label>
-                                    <input required onChange={inputHandle} type="number" name='width' className='w-full outline-none px-2 py-[4px] bg-[#1b1a1a] border border-[#404040] rounded-md' id='width' />
+                                    <input 
+                                        required 
+                                        onChange={inputHandle} 
+                                        type="number" 
+                                        name='width' 
+                                        value={state.width} // controlled component로 설정
+                                        className='w-full outline-none px-2 py-[4px] bg-[#1b1a1a] border border-[#404040] rounded-md' 
+                                        id='width' 
+                                    />
                                 </div>
                                 <div className='flex gap-2 justify-center items-start flex-col'>
                                     <label htmlFor="height">Height</label>
-                                    <input onChange={inputHandle} type="number" name='height' required className='w-full outline-none px-2 py-[4px] bg-[#1b1a1a] border border-[#404040] rounded-md' id='height' />
+                                    <input 
+                                        onChange={inputHandle} 
+                                        type="number" 
+                                        name='height' 
+                                        value={state.height} // controlled component로 설정
+                                        required 
+                                        className='w-full outline-none px-2 py-[4px] bg-[#1b1a1a] border border-[#404040] rounded-md' 
+                                        id='height' 
+                                    />
                                 </div>
                             </div>
                             <button className='px-4 py-2 text-[13px] overflow-hidden text-center bg-[#8b3dffad] text-white rounded-[3px] font-medium hover:bg-[#8b3dffd3] w-full'>Create new design</button>

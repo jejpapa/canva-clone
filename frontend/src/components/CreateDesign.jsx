@@ -56,7 +56,7 @@ const CreateDesign = () => {
     useEffect(() => {
         if (state && ref.current) {
             create_design()
-        } else {
+        } else {           
             navigate('/')
         }
     }, [state, ref])
