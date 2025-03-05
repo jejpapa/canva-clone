@@ -34,6 +34,7 @@ class designController {
 
 
         } catch (error) {
+            console.log('err......3333');
             console.log(error)
             return res.status(500).json({ message: error.message })
         }

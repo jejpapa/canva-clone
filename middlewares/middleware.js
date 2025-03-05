@@ -6,17 +6,20 @@ const auth = async (req, res, next) => {
         const token = authorization.split(' ')[1]
         if (token) {
             try {
-                const userInfo = await jwt.verify(token, 'farid')
+                const userInfo = await jwt.verify(token, 'wowtoken')
                 req.userInfo = userInfo
                 next()
             } catch (error) {
-                return res.status(401).json({ message: 'unauthorized' })
+                console.log('error...401');
+                return res.status(401).json({ message: 'unauthorized11' })
             }
         } else {
-            return res.status(401).json({ message: 'unauthorized' })
+            console.log('error...401  222');
+            return res.status(401).json({ message: 'unauthorized22' })
         }
     } else {
-        return res.status(401).json({ message: 'unauthorized' })
+        console.log('error...401  333');
+        return res.status(401).json({ message: 'unauthorized33' })
     }
 
 }

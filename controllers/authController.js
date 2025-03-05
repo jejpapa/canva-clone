@@ -25,7 +25,7 @@ class authController {
                     name: user.name,
                     email: user.email,
                     _id: user.id
-                }, 'hscho_ex', {
+                }, 'wowtoken', {
                     expiresIn: '30d'
                 })
 
@@ -51,7 +51,7 @@ class authController {
                         name: user.name,
                         email: user.email,
                         _id: user.id
-                    }, 'farid', {
+                    }, 'wowtoken', {
                         expiresIn: '2d'
                     })
 
