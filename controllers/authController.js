@@ -26,7 +26,7 @@ class authController {
                     email: user.email,
                     _id: user.id
                 }, 'wowtoken', {
-                    expiresIn: '30d'
+                    expiresIn: '30d' 
                 })
 
                 return res.status(201).json({ message: "Signup success", token })
@@ -37,7 +37,7 @@ class authController {
         }
     }
 
-    user_login = async (req, res) => {
+    user_login = async (req, res) => { 
 
         let { email, password } = req.body
         try {
