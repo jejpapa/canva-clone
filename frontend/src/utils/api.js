@@ -5,10 +5,10 @@ const production_api = '';
 
 const token = localStorage.getItem('canva_token');
 
-let baseURL = local_api; // Default to production
+let baseURL = production_api; // Default to production
 
-if (process.env.NODE_ENV !== 'development') {
-  baseURL = production_api; // Override with local if not production
+if (process.env.NODE_ENV === 'development') { 
+  baseURL = local_api; // Override with local if not production
 }
 
 
