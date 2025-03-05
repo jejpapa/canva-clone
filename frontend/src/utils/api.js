@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const local_api = 'http://localhost:5000'
 
-const production_api = 'https://canva-clone-silk-alpha.vercel.app/'
+const production_api = 'https://canva-clone-silk-alpha.vercel.app'
 
 
 const token = localStorage.getItem('canva_token')
