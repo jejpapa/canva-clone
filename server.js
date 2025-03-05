@@ -32,6 +32,7 @@ if (process.env.NODE_ENV !== 'development') {
     })
 }
 
+//same 
 const dbConnect = async () => {
     try {
         if (process.env.NODE_ENV === 'development') {
