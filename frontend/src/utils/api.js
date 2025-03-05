@@ -7,7 +7,7 @@ const production_api = ''
 const token = localStorage.getItem('canva_token')
 
 const api = axios.create({
-    baseURL: process.env.NODE_ENV === 'development'?local_api:production_api,
+    baseURL: production_api,
     headers: {
         'Authorization': token ? `Bearer ${token}` : ""
     },
